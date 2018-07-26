@@ -2,4 +2,4 @@
 
 Yonsei university graduate research
 
-Objective : simple blockchain code with multiple consensus algorithms.
+Objective : blockchain system with multiple consensus algorithms.
