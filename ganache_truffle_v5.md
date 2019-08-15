@@ -25,9 +25,9 @@ instance.함수('내용')
 -> 해당 컨트랙트 내 '함수'를 '내용'만큼 실행
 -> 해당 함수를 실행시키는 주체를 정해주지 않으면, 기본적으로 1번노드 (account[0])이 트랜잭션을 발행함.
 
-**기본꼴: instance.setStudentInfo(1515,"name","male", 28)
+**기본꼴: instance.setStudentInfo(1515,"name","male", 28)**
 
-**노드 지정:  instance.setStudentInfo(1212, "name2", "male", 33, {from: accounts[1]}) ->0번노드가 아닌 1번에서 처리
+**노드 지정:  instance.setStudentInfo(1212, "name2", "male", 33, {from: accounts[1]}) ->0번노드가 아닌 1번에서 처리**
 
 
 
