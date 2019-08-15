@@ -29,7 +29,7 @@ instance.함수('내용')
 
 **노드 지정:  instance.setStudentInfo(1212, "name2", "male", 33, {from: accounts[1]}) ->0번노드가 아닌 1번에서 처리**
 
-
+**등록정보 불러오기: instance.getStudentInfo(1212) -> name2 반환, (1212대신 1515쓰면 name반환)**
 
 -------------------------------
 
