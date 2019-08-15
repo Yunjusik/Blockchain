@@ -1,6 +1,6 @@
 **Truffle migration by ganache-gui**
 
-준비물 : 가나슈 gui 실행후, trufle.js 파일 주소를 가나슈와 연동
+가나슈 gui 실행후, trufle.js 파일 주소를 가나슈와 연동
 
 Truffle console
 -> 현재 트러플.js 환경설정의 네트워크로 접속 (develop로 새로만들지 않음)
@@ -25,8 +25,12 @@ instance.함수('내용')
 -> 해당 컨트랙트 내 '함수'를 '내용'만큼 실행
 -> 해당 함수를 실행시키는 주체를 정해주지 않으면, 기본적으로 1번노드 (account[0])이 트랜잭션을 발행함.
 
+기본꼴: instance.setStudentInfo(1515,"name","male", 28)
 
-web3.eth.
+TX발행 노드 지정:  instance.setStudentInfo(1212, "name2", "male", 33, {from: accounts[1]}) ->0번노드가 아닌 1번에서 처리
+
+
+
 -------------------------------
 
 
