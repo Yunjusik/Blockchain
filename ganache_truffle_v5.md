@@ -65,8 +65,13 @@ instance.buyRealEstate(0,"js", 28, {from:accounts[1], value:web3.utils.toWei('1.
 
 <event 함수>
 truffle v4에서는 watch 지원되지만, v5에서는 watch 사라짐.
-event를 받아보기위해 사용하는 watch 는 https://web3js.readthedocs.io/en/v1.2.0/web3-eth-contract.html#event트
+event를 받아보기위해 사용하는 watch 는 https://web3js.readthedocs.io/en/v1.2.0/web3-eth-contract.html#event
 사이트에서 확인해 볼 수 있으나, 현재 ganache 및 트러플에서는 제대로 사용이 안되는걸로 보임
+
+매입자 정보 불러오기
+instance.getBuyerInfo(0);
+instance.getAllbuyers();
 
 대신에 getPastEvents함수를 사용해서 이전블록에 담긴 이벤트를 확인해 볼 순 있음.
 코드: instance.getPastEvents('LogBuyRealEstate',{},{fromBlock:0,toBlock:'latest'},function(error,events){console.log(events);}).then(function(events){console.log(events)});
+
