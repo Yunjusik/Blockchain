@@ -5,7 +5,10 @@
 
 
 가나슈 gui 실행후, trufle.js 파일 주소를 가나슈와 연동
-접속 명령어 : Truffle migrate --network ganache  
+접속 명령어 :
+1. Truffle migrate --network ganache  
+2. Truffle console
+3. in console ) migrate --compile-all --reset
 =>현재 sol파일을 가나슈네트워크에 배포. 현재 ganache quicstart 기준 주소가 7545이므로, truffle.js 주소7545로 설정
 
 Truffle console
@@ -51,7 +54,10 @@ truffle test --network ganache
 -현 test폴더 내 js파일에 쓰여진대로 test스크립트를 실행하고 결과 리턴
 
 매물구입함수. 
-instance.buyRealEstate(0,"js", 28, {from:web3.eth.getAccounts[1], value:web3.toWei('1.50', 'ether')})
+prerequsite - account는 let accounts로 바꿔놓고 시작하는게 편함
+let accounts = await web.eth.getAccounts(),   ex) accounts[1] = 맨위노드주소 반환
+
+instance.buyRealEstate(0,"js", 28, {from:accounts[1], value:web3.utils.toWei('1.50', 'ether')})
 -> 매물은 0 ~ 9까지있고, 0번구입을위해 1.5 이더 지불하고, 구매자는 2번째노드. 
 -> V4기준 web3.toWei가 아닌 web3.utils.toWei를 사용하고, 양 끝 기호가 "->'로 바뀜.
 -> 기존 Dapp 레퍼런스는 bytes32를 사용하는데, 현재 리믹스 등 기타 다른 컴파일러에서도 bytes32 대신 string을 사용할 것... 단 string 사용시 string memory로 
