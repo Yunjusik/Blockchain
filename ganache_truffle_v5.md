@@ -63,6 +63,10 @@ instance.buyRealEstate(0,"js", 28, {from:accounts[1], value:web3.utils.toWei('1.
 -> 기존 Dapp 레퍼런스는 bytes32를 사용하는데, 현재 리믹스 등 기타 다른 컴파일러에서도 bytes32 대신 string을 사용할 것... 단 string 사용시 string memory로 
 
 
+<event 함수>
+truffle v4에서는 watch 지원되지만, v5에서는 watch 사라짐.
+event를 받아보기위해 사용하는 watch 는 https://web3js.readthedocs.io/en/v1.2.0/web3-eth-contract.html#event트
+사이트에서 확인해 볼 수 있으나, 현재 ganache 및 트러플에서는 제대로 사용이 안되는걸로 보임
 
-
-
+대신에 getPastEvents함수를 사용해서 이전블록에 담긴 이벤트를 확인해 볼 순 있음.
+코드: instance.getPastEvents('LogBuyRealEstate',{},{fromBlock:0,toBlock:'latest'},function(error,events){console.log(events);}).then(function(events){console.log(events)});
