@@ -75,3 +75,17 @@ instance.getAllbuyers();
 대신에 getPastEvents함수를 사용해서 이전블록에 담긴 이벤트를 확인해 볼 순 있음.
 코드: instance.getPastEvents('LogBuyRealEstate',{},{fromBlock:0,toBlock:'latest'},function(error,events){console.log(events);}).then(function(events){console.log(events)});
 
+
+metamask RPC error 해결 
+- 가나슈 restart하는 경우, 메타마스크와 젇보가 꼬여서 메타마스크 내 rpc에러가 발생하게 됨.
+- 트러플에서 재배포 후, 메타마스크로 다른네트워크에 연결했다가 다시 원래네트웤으로 회귀하는 식으로 새로고침 해야함.
+
+--dapp 프론트 엔드 개발---
+-웹페이지 템플릿-
+package.json 내 lite server 설치
+index.html / app.js 파일에 웹페이지 템플릿 구조 및 버튼작성하는 코드 추가
+
+-작성한 컨트랙트, web3 간 커뮤니케이션-
+js 폴더 내부 web3.min.js파일 -> 이더리움과 소통할 수 있게하는 라이브러리 (매우매우 중요)
+
+
