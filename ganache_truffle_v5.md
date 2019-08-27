@@ -70,7 +70,8 @@ event를 받아보기위해 사용하는 watch 는 https://web3js.readthedocs.io
 
 매입자 정보 불러오기
 instance.getBuyerInfo(0);
-instance.getAllbuyers();
+
+instance.getAllBuyers();
 
 대신에 getPastEvents함수를 사용해서 이전블록에 담긴 이벤트를 확인해 볼 순 있음.
 코드: instance.getPastEvents('LogBuyRealEstate',{},{fromBlock:0,toBlock:'latest'},function(error,events){console.log(events);}).then(function(events){console.log(events)});
@@ -83,9 +84,41 @@ metamask RPC error 해결
 --dapp 프론트 엔드 개발---
 -웹페이지 템플릿-
 package.json 내 lite server 설치
+작업경로에서 npm run dev 명령 입력 (lite-server)
+
 index.html / app.js 파일에 웹페이지 템플릿 구조 및 버튼작성하는 코드 추가
 
 -작성한 컨트랙트, web3 간 커뮤니케이션-
-js 폴더 내부 web3.min.js파일 -> 이더리움과 소통할 수 있게하는 라이브러리 (매우매우 중요)
+js 폴더 내부 web3.min.js파일 -> 이더리움과 소통할 수 있게하는 라이브러리 
+app.js 내부 web3명령어는 1.0미만버전 사용
+
+------------app.js buyRealEstate 함수------------------
+buyRealEstate: function() {	
+   var id = $('#id').val();
+   var name = $('#name').val();
+   var price = $('#price').val();
+   var age = $('#age').val();
+
+   
+   web3.eth.getAccounts(function(error, accounts){
+      if(error){
+        console.log(error);
+      }
+
+      
+      var account = accounts[0]; 
+      App.contracts.RealEstate.deployed().then(function(instance){
+        var nameUtf8Encoded = utf8.encode(name);
+        return instance.buyRealEstate(id,web3.toHex(nameUtf8Encoded), age, {from: account, value:price});
+      }).then(function(){
+        $('#name').val('');
+        $('#age').val('');
+        $('#buyModal').modal('hide');//창 종료
+      }).catch(function(err) {//캐치문을통해 에러발생시 따로처리
+        console.log(err.message);
+      });
+    });  
+   },
+--------------------------------------------
 
 
