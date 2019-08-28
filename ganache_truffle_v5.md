@@ -123,6 +123,7 @@ buyRealEstate: function() {
 
 
 
-1.Truffle --compile-all --reset --network ganache
+1.truffle migrate --compile-all --reset --network ganache
+
 2.npm run dev
 
