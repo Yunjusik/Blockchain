@@ -127,3 +127,13 @@ buyRealEstate: function() {
 
 2.npm run dev
 
+---------------testnet 배포 -------------
+스마트컨트랙트 배포시 이더리움 테스트넷인 ropsten 네트워크에 배포 
+방법은 remix/infura 
+remix의 경우 현재 invald address 문제로, infura에서 진행
+
+infura환경설정 : https://www.trufflesuite.com/tutorials/using-infura-custom-provider
+
+환경설정이 다 되었다면, 스마트컨트랙트를 재배포 : truffle migrate --compile-all --reset --network ropsten
+배포완료되면, 터미널상에 RealEstate contract address복사
+복사된 주소내용으로 이더스캔에서 컨트랙트 계정 확인.
