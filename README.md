@@ -1,1 +1,1 @@
-# Ethereum based smart contract
+# Ethereum smart contract
