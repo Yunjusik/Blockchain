@@ -1,5 +1,7 @@
 //var HDWalletProvider = require("truffle-hdwallet-provider");
 //var mnemonic = "giant dizzy dumb strike economy music gather steak pattern swear visit apple";
+
+
 module.exports = {
      // See <http://truffleframework.com/docs/advanced/configuration>
      // to customize your Truffle configuration!
@@ -9,6 +11,9 @@ module.exports = {
                port: 7545,
                network_id: "*" // Match any network id
           },
+          
+          // If using infura
+          
           //ropsten: {
             //   provider: function(){
              //       return new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/ae36b3186eaa40f8830b5007c4d4e3ca')
