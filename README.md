@@ -1,1 +1,1 @@
-Ethereum smart contract # consensus algorithm code in python3
+Ethereum smart contract # consensus algorithm code in python 3
