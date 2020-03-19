@@ -153,7 +153,7 @@ state space:
         C_numb = len(NodesInShard[n_shard])
         alpha = 10**6
         B = b_size
-        timeout = 1000000000000000000000000 # 거의 무한으로 해놓음 (무의미)
+        timeout = 1000000000000000000000000 # no timeout
 
         # 1) Intra 샤드에서 validation time 계산
         T_k_in_val = []
